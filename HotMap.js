@@ -5,13 +5,14 @@
             if (!isValid(options))
                 return this;
             var opts = $.extend({}, defaluts, options); //使用jQuery.extend 覆盖插件默认参数
-			      engine(this,opts);
+			engine(this,opts);
             return this;
+
         }
     });
 	var engine=function(self,opts){
 		    self.click(function (e) {
-			   var imgNavRate= self.width()/ RefWidth;
+			   var imgNavRate= self.width()/ opts.RefWidth;
                for (var i = 0; i < opts.HotArea.length; i++) {
                    var imgPoint = opts.HotArea[i];
                    //检测用户是否点到指定区域
