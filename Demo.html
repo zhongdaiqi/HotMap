@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title>HotMap Demo-By 钟代麒(微信13493975582)</title>
+		<script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+		<script type="text/javascript" src="HotMap.js"></script>
+	</head>
+<body>
+<img style="width:100%;"  src="InviteRegister.png" id="hotMap"/>
+<script>
+$(function(){
+	$("#hotMap").hotMap(
+	{
+		RefWidth:640,//参考宽度 您在640的时候制作 HotArea,则填写640，并不要求一定是原始宽度。后续打算再写一个制作HotArea的小工具。没有工具之前，您要可以利用浏览器的断点调试功能，查看e.offsetX  e.offsetY。一个HotArea由左上角、右下角2个点来确定。配置如下所示。
+		HotArea:[
+				{ 
+					   StartPoint: { X: 38, Y: 1021 },
+					   EndPoint: { X: 280, Y: 1088 },
+					   ClickAction: function () {
+						  alert("YOu click register 您点了注册!");
+					   }
+				},
+				{
+					StartPoint: { X: 311, Y: 1021 },
+                    EndPoint: { X: 607, Y: 1095 },
+                    ClickAction: function () {
+							alert("YOu click download 您点了下载!");
+                    }
+				}
+		]
+	}
+	);
+
+});
+</script>
+</body>
+</html>
